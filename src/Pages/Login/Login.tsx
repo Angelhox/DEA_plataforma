@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 export default function Login() {
   const navigate = useNavigate();
   const handleSubmit = () => {
-    navigate("/home");
+    navigate("/home")
   };
   return (
     <div className="d-flex justify-content-center align-items-center vw-100 vh-100 bg-light">
       <div className="card shadow p-4" style={{ width: "24rem" }}>
         <h3 className="text-center mb-4">Iniciar Sesión</h3>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={ handleSubmit}>
           <div className="mb-3">
             <label htmlFor="email" className="form-label">
               Correo electrónico

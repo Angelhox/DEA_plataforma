@@ -1,13 +1,13 @@
 import type React from "react";
 import Sidebar from "../../Pages/Sidebar/Sidbar";
 interface Props {
-  children: React.JSX.Element;
+  paginaAmostrar: React.JSX.Element;
 }
-export const LoggedLayout = ({ children }: Props) => {
+export const LoggedLayout = ({ paginaAmostrar }: Props) => {
   return (
     <div className="main-container">
       <Sidebar />
-      <main className="content">{children}</main>
+      <main className="content">{paginaAmostrar}</main>
     </div>
   );
 };
