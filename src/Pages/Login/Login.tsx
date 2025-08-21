@@ -7,7 +7,7 @@ export default function Login() {
     navigate("/home");
   };
   return (
-    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div className="d-flex justify-content-center align-items-center vw-100 vh-100 bg-light">
       <div className="card shadow p-4" style={{ width: "24rem" }}>
         <h3 className="text-center mb-4">Iniciar Sesión</h3>
 
