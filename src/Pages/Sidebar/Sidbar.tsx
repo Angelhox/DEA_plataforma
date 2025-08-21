@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Button, Nav } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./Sidebar.scss"
+import "./Sidebar.scss";
+
 import {
   HouseDoor,
   People,
@@ -10,24 +11,30 @@ import {
   ChevronRight,
   PersonCircle,
 } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 
 type MenuItem = {
   name: string;
   icon: React.ReactNode;
+  url: string;
   badge?: number;
 };
 
 const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [activeItem, setActiveItem] = useState("Dashboard");
+  const navigate = useNavigate();
 
   // Items del menú
   const menuItems: MenuItem[] = [
-    { name: "Inicio", icon: <HouseDoor /> },
-    { name: "Estudiantes", icon: <People /> },
-    { name: "Settings", icon: <Gear /> },
+    { name: "Inicio", icon: <HouseDoor />, url: "/home" },
+    { name: "Estudiantes", icon: <People />, url: "/estudiantes" },
+    { name: "Settings", icon: <Gear />, url: "/estudiantes" },
   ];
-
+  function handleClick(name: string, url: string) {
+    setActiveItem(name);
+    navigate(url);
+  }
   return (
     <div
       className={`d-flex flex-column bg-primary text-white`}
@@ -57,7 +64,7 @@ const Sidebar = () => {
             <Nav.Link
               href="#"
               active={activeItem === item.name}
-              onClick={() => setActiveItem(item.name)}
+              onClick={() => handleClick(item.name, item.url)}
               className={`d-flex align-items-center text-white ${
                 collapsed ? "justify-content-center" : ""
               }`}
