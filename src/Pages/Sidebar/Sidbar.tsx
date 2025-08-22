@@ -29,7 +29,7 @@ const Sidebar = () => {
   const menuItems: MenuItem[] = [
     { name: "Inicio", icon: <HouseDoor />, url: "/home" },
     { name: "Estudiantes", icon: <People />, url: "/estudiantes" },
-    { name: "Settings", icon: <Gear />, url: "/estudiantes" },
+    { name: "Settings", icon: <Gear />, url: "/Ninio" },
   ];
   function handleClick(name: string, url: string) {
     setActiveItem(name);

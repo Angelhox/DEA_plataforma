@@ -4,6 +4,8 @@ import { LoggedLayout } from "../Layouts/LoggedLayout/LoggedLayout";
 import { Estudiante } from "../Pages/Estudiante/Estudiante";
 import { Home } from "../Pages/Home/Home";
 
+import Ninio from "../Pages/Niño/Ninio";
+
 export const LoggedNavigation = () => {
   return (
     <BrowserRouter>
@@ -15,6 +17,10 @@ export const LoggedNavigation = () => {
         <Route
           path="/estudiantes"
           element={<LoggedLayout paginaAmostrar={<Estudiante />} />}
+        />
+        <Route
+          path="/Settings"
+          element={<LoggedLayout paginaAmostrar={< Ninio />} />}
         />
         <Route path="/" element={<Login />} />
       </Routes>
